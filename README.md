@@ -10,22 +10,22 @@ Steps to Clone Examples
 4. Browse to the location in your development environment where you want to store the repostory and click Select Repository Location.
 5. When prompted, Open the repository then Open the workspace.
 
-## Arrays of Objects Experimentation 
-1. Open *Grade.java* and *GradeRange.java*, read the code and run it to ensure it functions properly.  Then work through each of the experiments below and record your observations.
-    - This example code has been modified to better demonstrate the power of Arrays of Objects. An initializer list is used to populate the grades[] with objects. when you run the program note the order that that the grade objects are displayed in the console.  Record your observations.
-    - Review the code for the Grade class. Notice that it implements the Comparable<Grade> interface, which means it provides a compareTo() method designed to compare two Grade objects. When we have an array of Comparable objects, we can use the static methods provided in the Collection class to sort our array. Append the following code to the end of the main() method in GradeRange. You will need to import java.util.Arrays. What is the result and why?
+## GUI Basics Experimentation 
+1. Open *PushCounterPanel.java* and *PushCounter.java*, read the code and run it to ensure it functions properly.  Then work through each of the experiments below and record your observations.
+    - Add the following code to the constructor for the PushCounterPanel class. Then run the program and hover over the button without clicking.  What is the result? Record your observations.
     ```
-        Arrays.sort(grades);
-	
-        System.out.print("\n*\n* Sorted in ascending order\n*\n");
-        for (Grade letterGrade : grades)
-           System.out.println(letterGrade);
+    	pushButton.setToolTipText("Click Me!");
     ```
-    - Modify the compareTo() method in Grade.java as shown below.  What is the result and why?
+    - Add the following code to the actionPerformed() method in the ButtonListener class. Then run the program and click the button several times.  What is the result? Record your observations.
     ```
-        public int compareTo(Grade arg0) {
-            return  arg0.lowerBound - this.lowerBound;
-        }
+	 if (count % 2 == 0)
+         {
+            pushButton.setBackground(Color.GREEN);
+         } 
+         else 
+         {
+            pushButton.setBackground(Color.YELLOW);
+         }
     ```
 	
 
