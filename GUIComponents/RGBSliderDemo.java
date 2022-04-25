@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.JLabel;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -21,6 +22,7 @@ public class RGBSliderDemo extends JPanel {
 
     private JPanel colorDisplayPanel;
     private JSlider redSlider, greenSlider, blueSlider;
+    private JLabel redLabel, greenLabel, blueLabel;
 
     public RGBSliderDemo() {
 
@@ -72,6 +74,16 @@ public class RGBSliderDemo extends JPanel {
         blueSlider.setPaintTicks(true);
         blueSliderPanel.add(blueSlider);
 
+
+        /*
+         * Setup the Slider Labels
+         */
+        redLabel = new JLabel(Integer.toString(redSlider.getValue()));
+        redSliderPanel.add(redLabel);
+        greenLabel = new JLabel(Integer.toString(greenSlider.getValue()));
+        greenSliderPanel.add(greenLabel);
+        blueLabel = new JLabel(Integer.toString(blueSlider.getValue()));
+        blueSliderPanel.add(blueLabel);
         
         /*
          * Create a shared listener for all sliders
@@ -121,6 +133,16 @@ public class RGBSliderDemo extends JPanel {
         this.colorDisplayPanel.setBackground(selectedColor);
     }
 
+    private void updateSliderLabels() {
+        int red = this.redSlider.getValue();
+        int green = this.greenSlider.getValue();
+        int blue = this.blueSlider.getValue();
+
+        this.redLabel.setText(Integer.toString(red));
+        this.greenLabel.setText(Integer.toString(green));
+        this.blueLabel.setText(Integer.toString(blue));
+    }
+
     private class ColorSelectorListener implements ChangeListener {
 
         @Override
@@ -129,6 +151,8 @@ public class RGBSliderDemo extends JPanel {
             if (source.getValueIsAdjusting() == false) {
                 updateColorDisplayPanel();
             }
+
+            updateSliderLabels();
            
         }
 
