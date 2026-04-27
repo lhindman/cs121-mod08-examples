@@ -31,12 +31,23 @@ public class ImageIconDemo extends JPanel {
         JButton happyButton = new JButton();
         happyButton.setIcon(happyIcon);
         happyButton.setBackground(Color.YELLOW);
+        /* These options are necessary for the background color to be 
+         *  visible on MacOS systems */
+        happyButton.setOpaque(true);
+        happyButton.setBorderPainted(false);
+
         JPanel happyPanel = new JPanel();
         happyPanel.add(happyButton);
 
         JButton sadButton = new JButton();
         sadButton.setIcon(sadIcon);
         sadButton.setBackground(Color.YELLOW);
+        /* This option is necessary for the background color to be 
+         *  visible on MacOS systems */
+        sadButton.setOpaque(true);
+        sadButton.setBorderPainted(false);
+
+        
         JPanel sadPanel = new JPanel();
         sadPanel.add(sadButton);
 
